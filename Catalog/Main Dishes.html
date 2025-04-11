@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Landing Page</title>
+    <link rel="stylesheet" href="catalog-style.css">
+    <script src="/ITWELL update 3/ITWELLlibraryupdate1/SEARCH/perCatalog/catalogScript.js"></script>
+</head>
+<body>
+
+   
+
+        <div class="banner" id="start">
+            <div class="top">
+                <a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html"><img src="../images/IT WELL LOGO.png" alt=""></a>
+                <div class="topbar">
+                 
+                        <ul>
+
+                            <li><a href="/about-us/about_us.html">About</a></li>
+                            <li class="current"><a href="../CATALOGexample.html">Catalog</a></li>
+                            <li ><a href="../ITWELL.html">Home</a></li>
+
+                        </ul>
+                </div>
+    
+                <!-- PARA SA MOBILE MAGING BURGER, YANG TATLONG SPAN -->
+                <div class="hamburger" onclick="HamburgerButton()">
+                    
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <!-- ETO NMN UNG PARA SA MOBILE NA MGA PINDUTAN -->
+                <div class="mobile-menu" id="mobile-menu">
+                  
+                  <ul>
+    
+                    
+                    <li ><a href="/ITWELLlibraryupdate1/CATALOGexample.html" >Home</a></li>
+                        <li><a href="#" class="current">Catalog</a></li>
+                        <li><a href="/about-us/about_us.html">About</a></li>
+                      
+                  </ul>
+                </div>
+    
+    
+    </div>
+    <header>
+
+        <!-- eto ung desing s heather -->
+        <div class = "header-design">
+            <img src="../images/cataloghangs.png" alt="">
+        </div>
+       
+        <div class="button">
+            <div class="button-text">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a><img src="/ITWELL update 3//ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/CATALOGexample.html">Catalog</a><img src="/ITWELL update 3//ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "#" class="current1">Main-Dishes</a>
+            </div>
+            </div>
+          
+        <h1>Browse well ah!</h1>
+    </header>
+   
+    <section class="catalog">
+        <div class="item-Bar">
+            <ul>
+                <li>
+                    <div class="filter-bar">
+                        <label for="filter">Filter</label>
+                    <button id="filter" class="filter" onclick=filterbar()> <img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/arrow-down-sign-to-navigate.png" alt="" id="filter-Icon"></button>
+                            <div class="contents" id="filterContents">
+                                <ul>
+                                    <li><a href="#" data-filter="default">Default</a></li>
+                                    <li><a href="#" data-filter="seafood">Seafood</a></li>
+                                    <li><a href="#" data-filter="vegetable">Vegetable</a></li>
+                                    <li><a href="#" data-filter="meat">Meat</a></li>
+                                    <li><a href="#" data-filter="pork">Pork</a></li>
+                                    <li><a href="#" data-filter="Noodles">Noodles</a></li>
+                            
+                               
+                            
+                                </ul>
+                                
+
+                            </div>
+                            
+
+                    </div>
+                </li>
+                <li>
+                    <div class="search-Bar">
+                        <input type="text" class="search" placeholder="search" onkeyup="searchItems()">
+                        <button><img src="../images/topbar/search.png" alt=""></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+        window.originalOrder = null;
+            function filterbar(){
+              var filterBtn = document.getElementById("filterContents");
+          var filterIcon = document.getElementById("filter-Icon")
+              if(filterBtn.style.display === "block"){
+                filterBtn.style.display = "none";
+            filterIcon.style.transform = "rotate(0deg)"
+              }else{
+                filterBtn.style.display = "block";
+            filterIcon.style.transform = "rotate(180deg)"
+          }
+        }
+
+        function filterItems(filter) {
+            let allItems = document.querySelectorAll('.items .item-yellow, .items .item-blue, .items .item-red');
+            let pages = document.querySelectorAll('.items');
+            let pagination = document.querySelector('.pagination');
+            let page1 = document.getElementById('page1');
+            let page2 = document.getElementById('page2');
+
+            if (filter === 'default') {
+                // Show only active page
+                let activePage = document.querySelector('.pagination .active').id.replace('-btn', '');
+                pages.forEach(page => page.style.display = 'none');
+                document.getElementById(activePage).style.display = 'grid';
+                
+                // Restore original layout
+                if (window.originalOrder) {
+                    window.originalOrder.forEach(({element, parent}) => {
+                        parent.appendChild(element);
+                        element.style.display = 'flex';
+                        element.style.flexDirection = 'column';
+                        element.style.justifyContent = 'center';
+                    });
+                }
+                
+                pagination.style.display = 'block';
+            } else {
+                
+                pages.forEach(page => page.style.display = 'grid');
+                
+                
+                pagination.style.display = 'none';
+                
+                
+                let matchingItems = Array.from(allItems).filter(item => item.classList.contains(filter));
+                
+               
+                allItems.forEach(item => item.style.display = 'none');
+                
+                
+                matchingItems.forEach((item, index) => {
+                    item.style.display = 'flex';
+                    item.style.flexDirection = 'column';
+                    item.style.justifyContent = 'center';
+                    
+                    
+                    if (index < 16) {
+                        page1.appendChild(item);
+                    } else {
+                        page2.appendChild(item);
+                    }
+                });
+
+                
+                if (matchingItems.length <= 16) {
+                    page1.style.display = 'grid';
+                    page2.style.display = 'none';
+                }
+            }
+
+            adjustMargins();
+        
+            
+            document.getElementById('filterContents').style.display = 'none';
+            document.getElementById('filter-Icon').style.transform = "rotate(0deg)";
+        }
+    </script>
+    
+        <div class="items" id="page1" style="padding-top: 2rem;">
+            <!-- page 1 -->
+            <div class="item-yellow"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Champorado.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Champorado.png" alt="Item 1"><p>Champorado</p></a></div>
+            <div class="item-yellow meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Baked-mac.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Filipino Style Bake Ma.png" alt="Item 2"><p>Filipino Style Bake Mac</p></a></div>
+            <div class="item-yellow Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Spaghetti.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Filipino Style Spaghetti.png" alt="Item 3"><p>Filipino Style Spaghetti</p></a></div>
+            <div class="item-yellow Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Palabok.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Palabok.png" alt="Item 4"><p>Palabok</p></a></div>
+            <div class="item-blue Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Pancit-Bihon.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Pancit Bihon.png" alt="Item 5"><p>Pancit Bihon</p></a></div>
+            <div class="item-blue Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Pancit-Canton.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Pancit Canton.png" alt="Item 6"><p>Pancit Canton</p></a></div>
+            <div class="item-blue vegetable"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Munggo.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Munggo.png" alt="Item 7"><p>Munggo</p></a></div>
+            <div class="item-blue Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Pancit-Bato.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Pancit Bato.png" alt="Item 8"><p>Pancit Bato</p></a></div>
+            <div class="item-red Noodles"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Pancit-Habhab.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Pancit Habhab.png" alt="Item 9"><p>Pancit Habhab</p></a></div>
+            <div class="item-red meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Longsilog.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Longsilog.png" alt="Item 10"><p>Longsilog</p></a></div>
+            <div class="item-red meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Tapsilog.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Tapsilog.png" alt="Item 11"><p>Tapsilog</p></a></div>
+            <div class="item-red pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Tocilog.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Tocilog.png" alt="Item 12"><p>Tocilog</p></a></div>
+            <div class="item-yellow seafood"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Bangusilog.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Bangusilog.png" alt="Item 13"><p>Bangusilog</p></a></div>
+            <div class="item-yellow pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Sisig.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Sisig.png" alt="Item 14"><p>Sisig</p></a></div>
+            <div class="item-yellow pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/Letchon-Kawali.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Lechon Kawali.png" alt="Item 15"><p>Lechon Kawali</p></a></div>
+            <div class="item-yellow pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/main-dishes/LetchonPorkBelly.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Lechon Pork Belly.png" alt="Item 16"><p>Lechon Belly</p></a></div>
+        </div>
+    
+        <div class="items" id="page2" style="display: none; padding-top: 2rem;">
+            <!-- page 2 -->
+            <div class="item-red meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Adobong Manok sa Gata.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Adobong Manok sa Gata.png" alt="Adobong Manok sa Gata"><p>Adobong Manok sa Gata</p></a></div>
+            <div class="item-red meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Adobong Manok.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Adobong Manok.png" alt="Adobong Manok"><p>Adobong Manok</p></a></div>
+            <div class="item-red pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Bicol Express.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Bicol Express.png" alt="Bicol Express"><p>Bicol Express</p></a></div>
+            <div class="item-red pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Binagoongan na Baboy.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Binagoongan Na Baboy.png" alt="Binagoongan Na Baboy"><p>Binagoongan Na Baboy</p></a></div>
+            <div class="item-yellow seafood"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Daing na Bangus.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Daing Na Bangus.png" alt="Daing Na Bangus"><p>Daing Na Bangus</p></a></div>
+            <div class="item-yellow pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Dinuguan.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Dinuguan.png" alt="Dinuguan"><p>Dinuguan</p></a></div>
+            <div class="item-yellow meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/inasal na Manok.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Inasal Na Manok.png" alt="Inasal Na Manok"><p>Inasal Na Manok</p></a></div>
+            <div class="item-yellow seafood"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Inihaw na Bangus.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Inihaw na Bangus.png" alt="Inihaw na Bangus"><p>Inihaw na Bangus</p></a></div>
+            <div class="item-blue meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Kalderetang Kambing.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Kalderetang Kambing.png" alt="Kalderetang Kambing"><p>Kalderetang Kambing</p></a></div>
+            <div class="item-blue meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Kalderetang Baka.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Kalderetang Baka.png" alt="Kalderetang Baka"><p>Kalderetang Baka</p></a></div>
+            <div class="item-blue pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Kare-kareng Pata.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Kare-kareng Pata.png" alt="Kare-kareng Pata"><p>Kare-kareng Pata</p></a></div>
+            <div class="item-blue pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Lumpiang Shanghai.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Lumpiang Shanghai.png" alt="Lumpiang Shanghai"><p>Lumpiang Shanghai</p></a></div>
+            <div class="item-blue meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Mechadong Baka.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Mechadong Baka.png" alt="Mechadong Baka"><p>Mechadong Baka</p></a></div>
+            <div class="item-blue pork"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Menudong Baboy.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Menudong Baboy.png" alt="Menudong Baboy"><p>Menudong Baboy</p></a></div>
+            <div class="item-blue vegetable"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Pinakbet.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Pinakbet.png" alt="Pinakbet"><p>Pinakbet</p></a></div>
+            <div class="item-blue meat"><a href="/ITWELL update 3/ITWELLlibraryupdate1/Descriptions/page-2/main-dish/Sinampalukang Manok.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Main Dishes/Sinampalukang Manok.png" alt="Sinampalukang Manok"><p>Sinampalukang Manok</p></a></div>
+        </div>
+        <div class="pagination">
+            <button id="page1-btn" class="active">1</button>
+            <button id="page2-btn">2</button>
+        </div>
+    </section>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            let allItems = document.querySelectorAll('.items .item-yellow, .items .item-blue, .items .item-red');
+            window.originalOrder = Array.from(allItems).map(item => ({
+                element: item,
+                parent: item.parentElement
+            }));
+        });
+
+        
+        document.getElementById('page1-btn').addEventListener('click', function() {
+            document.getElementById('page1').style.display = 'grid';
+            document.getElementById('page2').style.display = 'none';
+            this.classList.add('active');
+            document.getElementById('page2-btn').classList.remove('active');
+            filterItems('default');
+        });
+
+        document.getElementById('page2-btn').addEventListener('click', function() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'grid';
+            this.classList.add('active');
+            document.getElementById('page1-btn').classList.remove('active');
+            filterItems('default');
+        });
+
+       
+        document.querySelectorAll('#filterContents ul li a').forEach(filterLink => {
+            filterLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                let filterType = this.getAttribute('data-filter');
+                
+                // Close the dropdown first
+                document.getElementById('filterContents').style.display = 'none';
+                document.getElementById('filter-Icon').style.transform = "rotate(0deg)";
+                
+                // Then apply the filter
+                filterItems(filterType);
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            var filterContents = document.getElementById('filterContents');
+            var filterButton = document.getElementById('filter');
+            
+            // If clicking outside both the filter button and filter contents
+            if (!filterButton.contains(event.target) && !filterContents.contains(event.target)) {
+                filterContents.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
+<footer>
+    <div class="FOOT" id="FOOTER">
+        <link rel="stylesheet" href="../FOOTER/footer.css">
+        <div class="Team">
+            <a href="/about-us/about_us.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitelogo.png" alt=""></a>
+            <div>
+                <h1>LEARN MORE ABOUT US!</h1>
+                <h6>Meet The Team</h6>
+                <h6>IT-well</h6>
+            </div>
+        </div>
+        <div class="socials">
+            <h1>SOCIALS!</h1>
+            <div class="social-icons">
+            <a href="https://www.instagram.com/it.well.library?igsh=NzFjb2F6MG93Y20x"><img src="../images/footer/white/whiteig.png" alt=""></a>
+            <a href="https://www.facebook.com/share/19yahNdhqe/"><img src="../images/footer/white/whitefb.png" alt=""></a>
+            <a href="https://m.youtube.com/channel/UCg-EVUMzkL_SoBhqvPicMEQ"><img src="../images/footer/white/whiteyt.png" alt=""></a>
+        </div>
+        </div>
+        <div class="back-To-Top">
+            <h3>BACK TO TOP</h3>
+        <a href="#start"><img src="../images/footer/back to top button.png" alt=""></a>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: The information provided on this website is for general informational purposes only. We make no guarantees about the accuracy or completeness of the content.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+    function HamburgerButton() {
+      var menu = document.getElementById("mobile-menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

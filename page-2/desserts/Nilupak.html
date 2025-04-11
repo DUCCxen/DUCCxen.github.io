@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="../descriptionStyles.css">
+    <script src="/ITWELL update 3/ITWELLlibraryupdate1/SEARCH/search.js" defer></script>
+</head>
+<body>
+    
+    <div class="top" id="start">
+        <a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/IT WELL LOGO.png" alt="">
+        </a>
+        <div class="topbar" id="start">
+            <ul>
+                <div class="search-Bar">
+               
+                    <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+                </div>
+                <li><a href="/about-us/about_us.html">About</a></li>
+
+                    <li class="current"><a href="/ITWELL update 3/ITWELLlibraryupdate1/CATALOGexample.html">Catalog</a></li>
+                    <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a></li>
+
+         
+            </ul>
+        </div>
+        <div class="hamburger" onclick="HamburgerButton()">
+                    
+                    
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+  <!-- ETO NMN UNG PARA SA MOBILE NA MGA PINDUTAN -->
+  <div class="mobile-menu" id="mobile-menu">
+              
+    <ul>
+
+      <div class="search-Bar">
+     
+          <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+      </div>
+      
+      <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html"" >Home</a></li>
+          <li><a href="#" class="current">Catalog</a></li>
+          <li><a href="/about-us/about_us.html">About</a></li>
+        
+    </ul>
+  </div>
+    </div>
+    
+
+<script>
+    function HamburgerButton() {
+      var menu = document.getElementById("mobile-menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+
+
+    <div class="button">
+        <div class="button-text">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/CATALOGexample.html">Catalog</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/Catalog/Desserts.html">Desserts</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href="#" class="current1">Nilupak</a>
+            </div>
+    </div>
+
+    <div class="content">
+        <div class="left-section">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/Page 2 Food Images/Desserts/Nilupak.png" class="food-img" alt="Food Image">
+            <div id="share-link" class="hidden" style="margin-top: 20px; font-weight: bold; padding: 10px; border-radius: 5px; transition: opacity 0.5s ease, max-height 0.5s ease;"></div>
+      
+        </div>
+        <div class="right-section">
+            <div class="food-info">
+                <div class="food-name">Nilupak
+                    <button class="share-button" onclick="generateShareLink()">
+                        <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/icons/shareicon.png" alt="Share Icon" class="share-icon">
+                    </button>
+                </div>
+                <!-- Description Section -->
+                <div class="descriptor">
+                    <dl>
+                        <dt>Description</dt>
+                        <dd>Nilupak is a traditional Filipino delicacy made from mashed starchy ingredients like cassava, banana, or sweet potato, mixed with sugar, butter, and condensed milk. The word nilupak means "pounded" or "mashed," referring to the way the ingredients are prepared. This sweet and chewy treat is popular as a merienda (afternoon snack) and is often topped with grated coconut or cheese for extra flavor.</dd>
+                    </dl>
+                </div>
+
+                <!-- Toggle Buttons -->
+                <div class="toggle-buttons">
+                    <button class="active" onclick="showSection('ingredients')">Ingredients</button>
+                    <button onclick="showSection('allergies')">Allergens</button>
+                    <button onclick="showSection('steps')">Steps</button>
+                </div>
+
+                <!-- Ingredients Section -->
+                <div class="content-section" id="ingredients">
+                    <div class="ingredients">
+                        <p>Ingredients</p>
+                        <ul>
+                            <li>1 kg cassava (peeled and boiled)</li>
+                            <li>1/2 cup condensed milk</li>
+                            <li>1/2 cup granulated sugar (adjust to taste)</li>
+                            <li>1/4 cup butter or margarine (softened)</li>
+                            <li>1/2 cup grated coconut (for topping)</li>
+                            <li>1/2 cup grated cheese (optional)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Allerg Section -->
+                <div class="content-section hidden" id="allergies">
+                    <div class="allergies">
+                        <p>Allergens</p>
+                        <dl>
+                            <dt>Dairy</dt>
+                            <dd>Nilupak contains dairy which can cause issues for those with dairy allergies.</dd>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Steps Section -->
+                <div class="content-section hidden" id="steps">
+                    <div class="steps">
+                        <p>Steps</p>
+                        <ol>
+                            <li><strong>Boil the cassava:</strong> Boil the cassava until soft, then drain and remove the tough fibers from the center.</li>
+                            <li><strong>Mash the cassava:</strong> Using a mortar and pestle (or a fork/potato masher), pound or mash the cassava until smooth.</li>
+                            <li><strong>Mix the ingredients:</strong> Add condensed milk, sugar, and butter to the mashed cassava. Mix well until smooth and fully combined.</li>
+                            <li><strong>Shape the Nilupak:</strong> Transfer the mixture to a greased pan or shape it into small, round cakes.</li>
+                            <li><strong>Add toppings:</strong> Sprinkle with grated coconut and cheese for extra flavor.</li>
+                            <li><strong>Serve:</strong> Nilupak is best enjoyed fresh and slightly warm.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="FOOT" id="FOOTER">
+        <link rel="stylesheet" href="/ITWELL update 3/ITWELLlibraryupdate1/FOOTER/footer.css">
+        <div class="Team">
+            <a href="/about-us/about_us.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitelogo.png" alt=""></a>
+            <div>
+                <h1>LEARN MORE ABOUT US!</h1>
+                <h6>Meet The Team</h6>
+                <h6>IT-well</h6>
+            </div>
+        </div>
+        <div class="socials">
+            <h1>SOCIALS!</h1>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/it.well.library/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whiteig.png" alt=""></a>
+                <a href="https://www.facebook.com/share/19yahNdhqe/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitefb.png" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCg-EVUMzkL_SoBhqvPicMEQ"><img src="/ITWELL update 3/ITWELLlibraryupdate1\images\footer\white\whiteyt.png" alt=""></a>
+            </div>
+        </div>
+        <div class="back-To-Top">
+            <h3>BACK TO TOP</h3>
+        <a href="#start"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/back to top button.png" alt=""></a>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: The information provided on this website is for general informational purposes only. We make no guarantees about the accuracy or completeness of the content.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        function showSection(sectionId) {
+            
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            
+            document.querySelectorAll('.toggle-buttons button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.toggle-buttons button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+        }
+    </script>
+    
+<div id="copy-notification">Link copied to clipboard!</div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.add('hidden');
+        });
+
+        document.getElementById(sectionId).classList.remove('hidden');
+
+        document.querySelectorAll('.toggle-buttons button').forEach(button => {
+            button.classList.remove('active');
+        });
+        document.querySelector(`.toggle-buttons button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+
+    function generateShareLink() {
+        const currentUrl = window.location.href;
+        const randomLink = currentUrl + '?share=' + Math.random().toString(36).substring(7);
+
+        navigator.clipboard.writeText(randomLink).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error("Failed to copy link: ", err);
+        });
+    }
+
+    function showCopyNotification() {
+        const notification = document.getElementById("copy-notification");
+        notification.style.opacity = "1";
+
+        setTimeout(() => {
+            notification.style.opacity = "0";
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>

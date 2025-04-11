@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="../descriptionStyles.css">
+    <script src="/ITWELL update 3/ITWELLlibraryupdate1/SEARCH/search.js" defer></script>
+    </style> 
+</head>
+<body>
+    
+    <div class="top">
+        <a href="/ITWELLlibraryupdate1/ITWELL.html">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/IT WELL LOGO.png" alt="">
+        </a>
+        <div class="topbar" id="start">
+            <ul>
+                <div class="search-Bar">
+       
+                    <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+                </div>
+                <li><a href="/about-us/about_us.html">About</a></li>
+
+                    <li class="current"><a href="#">Catalog</a></li>
+                    <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a></li>
+
+         
+            </ul>
+        </div>
+        <div class="hamburger" onclick="HamburgerButton()">
+                    
+                    
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+     
+<!-- ETO NMN UNG PARA SA MOBILE NA MGA PINDUTAN -->
+<div class="mobile-menu" id="mobile-menu">
+          
+<ul>
+    <div class="search-Bar">
+     
+        <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+    </div>
+
+ 
+  <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html" >Home</a></li>
+      <li><a href="#" class="current">Catalog</a></li>
+      <li><a href="/about-us/about_us.html">About</a></li>
+    
+</ul>
+</div>
+
+    </div>
+    
+
+<script>
+    function HamburgerButton() {
+      var menu = document.getElementById("mobile-menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+
+
+    <div class="button">
+        <div class="button-text">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/CATALOGexample.html">Catalog</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/Catalog/Main Dishes.html">Main Dishes</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href="#" class="current1">Longsilog</a>
+            </div>
+    </div>
+
+    <div class="content">
+        <div class="left-section">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/main-dishes/maindish hompage/Longsilog.png" class="food-img" alt="Food Image">
+            <!-- Display the generated link -->
+            <div id="share-link" class="hidden" style="margin-top: 20px; font-weight: bold; padding: 10px; border-radius: 5px; transition: opacity 0.5s ease, max-height 0.5s ease;"></div>
+        </div>
+        <div class="right-section">
+            <div class="food-info">
+                <div class="food-name">
+                    Longsilog
+                    <button class="share-button" onclick="generateShareLink()">
+                        <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/icons/shareicon.png" alt="Share Icon" class="share-icon">
+                    </button>
+                </div>
+                <!-- Description Section -->
+                <div class="descriptor">
+                    <dl>
+                        <dt>Description</dt>
+                        <dd>Longsilog is a classic Filipino breakfast dish that combines longganisa (Filipino sweet sausage), garlic fried rice (sinangag), and a fried egg (itlog). The sweet and savory flavors from the longganisa complement the garlic-infused rice, making it a hearty and satisfying meal often enjoyed in the morning. It is a popular dish in Filipino homes and restaurants, often served with vinegar on the side.</dd>
+                    </dl>
+                </div>
+
+                <!-- Toggle Buttons -->
+                <div class="toggle-buttons">
+                    <button class="active" onclick="showSection('ingredients')">Ingredients</button>
+                    <button onclick="showSection('allergies')">Allergens</button>
+                    <button onclick="showSection('steps')">Steps</button>
+                </div>
+
+                <!-- Display the generated link -->
+                <div id="share-link" style="margin-top: 20px; font-weight: bold;"></div>
+                <!-- Ingredients Section -->
+                <div class="content-section" id="ingredients">
+                    <div class="ingredients">
+                        <p>Ingredients</p>
+                        <ul>
+                            <li><strong>For the Longganisa (Sweet Sausage):</strong></li>
+                            <li>1 lb ground pork</li>
+                            <li>2 tbsp brown sugar</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tbsp minced garlic</li>
+                            <li>1 tsp salt</li>
+                            <li>1/2 tsp black pepper</li>
+                            <li>1/4 tsp paprika (optional)</li>
+                            <li>1 tbsp vinegar (optional)</li>
+                            <li><strong>For the Sinangag (Garlic Fried Rice):</strong></li>
+                            <li>3 cups cooked rice (preferably day-old rice)</li>
+                            <li>4 cloves garlic, minced</li>
+                            <li>2 tbsp vegetable oil</li>
+                            <li>Salt to taste</li>
+                            <li>Freshly ground black pepper</li>
+                            <li><strong>For the Itlog (Fried Egg):</strong></li>
+                            <li>2 eggs</li>
+                            <li>1 tbsp vegetable oil or butter</li>
+                            <li>Salt and pepper to taste</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Allerg Section -->
+                <div class="content-section hidden" id="allergies">
+                    <div class="allergies">
+                        <p>Allergens</p>
+                        <dl>
+                            <dt>Garlic and Onion</dt>
+                            <dd>Garlic and onion are commonly used in the preparation of the garlic fried rice (sinangag). Some people may have sensitivities or allergies to these ingredients, leading to digestive distress or skin reactions.</dd>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Steps Section -->
+                <div class="content-section hidden" id="steps">
+                    <div class="steps">
+                        <p>Steps</p>
+                        <ol>
+                            <li><strong>Make the Longganisa:</strong> In a bowl, combine the ground pork, brown sugar, soy sauce, minced garlic, salt, black pepper, paprika, and vinegar (optional). Mix well until everything is fully incorporated. Shape the mixture into small sausage links or patties. Heat a skillet over medium heat and cook the longganisa for 4-5 minutes per side, or until cooked through and slightly caramelized. Set aside.</li>
+                            <li><strong>Make the Sinangag (Garlic Fried Rice):</strong> In the same skillet, heat vegetable oil over medium-high heat. Add the minced garlic and sauté until fragrant and golden brown, about 1-2 minutes. Add the cooked rice and stir-fry for 3-5 minutes, breaking up any clumps, until the rice is heated through and slightly crispy. Season with salt and black pepper to taste. Set aside.</li>
+                            <li><strong>Make the Itlog (Fried Egg):</strong> Heat oil or butter in a non-stick frying pan over medium heat. Crack the eggs into the pan and fry until the whites are set but the yolk is still runny, or cook to your desired doneness. Season with salt and pepper.</li>
+                            <li><strong>Assemble the Longsilog:</strong> Serve a portion of garlic fried rice on each plate. Place the cooked longganisa on the side. Top with a freshly fried egg.</li>
+                            <li><strong>Enjoy!</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="FOOT" id="FOOTER">
+        <link rel="stylesheet" href="/ITWELL update 3/ITWELLlibraryupdate1/FOOTER/footer.css">
+        <div class="Team">
+            <a href="/about-us/about_us.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitelogo.png" alt=""></a>
+            <div>
+                <h1>LEARN MORE ABOUT US!</h1>
+                <h6>Meet The Team</h6>
+                <h6>IT-well</h6>
+            </div>
+        </div>
+        <div class="socials">
+            <h1>SOCIALS!</h1>
+            <div class="social-icons">
+            <a href="https://www.instagram.com/it.well.library/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whiteig.png" alt=""></a>
+            <a href="https://www.facebook.com/share/19yahNdhqe/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitefb.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCg-EVUMzkL_SoBhqvPicMEQ"><img src="/ITWELL update 3/ITWELLlibraryupdate1\images\footer\white\whiteyt.png" alt=""></a>
+        </div>
+        </div>
+        <div class="back-To-Top">
+            <h3>BACK TO TOP</h3>
+        <a href="#start"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/back to top button.png" alt=""></a>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: The information provided on this website is for general informational purposes only. We make no guarantees about the accuracy or completeness of the content.</p>
+        </div>
+    </div>
+</footer>
+<style>
+    #copy-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+    }
+</style>
+
+<div id="copy-notification">Link copied to clipboard!</div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.add('hidden');
+        });
+
+        document.getElementById(sectionId).classList.remove('hidden');
+
+        document.querySelectorAll('.toggle-buttons button').forEach(button => {
+            button.classList.remove('active');
+        });
+        document.querySelector(`.toggle-buttons button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+
+    function generateShareLink() {
+        const currentUrl = window.location.href;
+        const randomLink = currentUrl + '?share=' + Math.random().toString(36).substring(7);
+
+        navigator.clipboard.writeText(randomLink).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error("Failed to copy link: ", err);
+        });
+    }
+
+    function showCopyNotification() {
+        const notification = document.getElementById("copy-notification");
+        notification.style.opacity = "1";
+
+        setTimeout(() => {
+            notification.style.opacity = "0";
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>

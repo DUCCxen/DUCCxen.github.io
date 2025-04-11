@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="../descriptionStyles.css">
+    <script src="/ITWELL update 3/ITWELLlibraryupdate1/SEARCH/search.js" defer></script>
+    </style> 
+</head>
+<body>
+    
+    <div class="top">
+        <a href="/ITWELLlibraryupdate1/ITWELL.html">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/IT WELL LOGO.png" alt="">
+        </a>
+        <div class="topbar" id="start">
+            <ul>
+                <div class="search-Bar">
+       
+                    <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+                </div>
+                <li><a href="/about-us/about_us.html">About</a></li>
+
+                    <li class="current"><a href="#">Catalog</a></li>
+                    <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a></li>
+
+         
+            </ul>
+        </div>
+        <div class="hamburger" onclick="HamburgerButton()">
+                    
+                    
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+     
+<!-- ETO NMN UNG PARA SA MOBILE NA MGA PINDUTAN -->
+<div class="mobile-menu" id="mobile-menu">
+          
+<ul>
+    <div class="search-Bar">
+     
+        <input type="text" class="search" placeholder="search" ><button><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/topbar/search.png" alt=""></button></input>
+    </div>
+
+ 
+  <li ><a href="/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html" >Home</a></li>
+      <li><a href="#" class="current">Catalog</a></li>
+      <li><a href="/about-us/about_us.html">About</a></li>
+    
+</ul>
+</div>
+
+    </div>
+    
+
+<script>
+    function HamburgerButton() {
+      var menu = document.getElementById("mobile-menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+
+
+    <div class="button">
+        <div class="button-text">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/ITWELL.html">Home</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/CATALOGexample.html">Catalog</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href = "/ITWELL update 3/ITWELLlibraryupdate1/Catalog/Soups.html">Soups</a><img src="/ITWELL update 3/ITWELLlibraryupdate1/Catalog/filter-icons/right-arrow.png" alt="">
+            <a href="#" class="current1">Nilagang Baboy</a>
+            </div>
+    </div>
+
+    <div class="content">
+        <div class="left-section">
+            <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/soups/soups homepage/Nilagang Baboy.png" class="food-img" alt="Food Image">
+            <!-- Display the generated link -->
+            <div id="share-link" class="hidden" style="margin-top: 20px; font-weight: bold; padding: 10px; border-radius: 5px; transition: opacity 0.5s ease, max-height 0.5s ease;"></div>
+        </div>
+        <div class="right-section">
+            <div class="food-info">
+                <div class="food-name">
+                    Nilagang Baboy
+                    <button class="share-button" onclick="generateShareLink()">
+                        <img src="/ITWELL update 3/ITWELLlibraryupdate1/images/icons/shareicon.png" alt="Share Icon" class="share-icon">
+                    </button>
+                </div>
+                <!-- Description Section -->
+                <div class="descriptor">
+                    <dl>
+                        <dt>Description</dt>
+                        <dd>Nilagang Baboy is a comforting Filipino dish, perfect for family gatherings and special occasions. It features tender pork simmered with a variety of vegetables in a light, savory broth. This dish is simple but hearty, providing a satisfying taste with every spoonful.</dd>
+                    </dl>
+                </div>
+
+                <!-- Toggle Buttons -->
+                <div class="toggle-buttons">
+                    <button class="active" onclick="showSection('ingredients')">Ingredients</button>
+                    <button onclick="showSection('allergies')">Allergens</button>
+                    <button onclick="showSection('steps')">Steps</button>
+                </div>
+
+                <!-- Display the generated link -->
+                <div id="share-link" style="margin-top: 20px; font-weight: bold;"></div>
+                <!-- Ingredients Section -->
+                <div class="content-section" id="ingredients">
+                    <div class="ingredients">
+                        <p>Ingredients</p>
+                        <ul>
+                                <li>2 lbs. Pork (preferably pork ribs or pork belly, cut into chunks)</li>
+                                <li>1 piece Onion (peeled and quartered)</li>
+                                <li>4 cloves Garlic (minced)</li>
+                                <li>1 piece Knorr Pork Cube (optional for added flavor)</li>
+                                <li>10 cups Water</li>
+                                <li>2 medium-sized Potatoes (peeled and cut into chunks)</li>
+                                <li>2 ears Corn (cut into 2-3 inch pieces)</li>
+                                <li>1 ½ cups Pechay (bok choy or Chinese cabbage)</li>
+                                <li>1 ½ cups Green beans (sliced into 2-inch pieces)</li>
+                                <li>1 medium-sized Banana heart (optional, sliced thinly)</li>
+                                <li>2 pieces Tomatoes (quartered)</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Fish sauce or patis to taste</li>
+                                <li>1 tablespoon cooking oil</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Allerg Section -->
+                <div class="content-section hidden" id="allergies">
+                    <div class="allergies">
+                        <p>Allergens</p>
+                        <dl>
+                            <dt>Fish Sauce Allergy (Patis)</dt>
+                            <dd>Fish sauce is often used to season Nilagang Baboy. People with a fish allergy should avoid this ingredient, as it could trigger an allergic reaction.</dd>
+                            <dt>Garlic Allergy</dt>
+                            <dd>Garlic is commonly used for flavoring in Nilagang Baboy. Individuals with a garlic allergy may experience symptoms like skin rashes, digestive upset, or swelling.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Steps Section -->
+                <div class="content-section hidden" id="steps">
+                    <div class="steps">
+                        <p>Steps</p>
+                        <ol>
+                            <li><strong>Prepare the Pork:</strong> In a large pot, heat a tablespoon of oil over medium heat. Add the pork pieces and sear them for about 3-5 minutes until they get a light brown color on all sides.</li>
+                            <li><strong>Sauté Onions and Garlic:</strong> Add the minced garlic and quartered onion to the pot with the pork. Sauté them for 2-3 minutes until they become fragrant.</li>
+                            <li><strong>Add Water and Seasoning:</strong> Pour in 10 cups of water and bring it to a boil. Add the Knorr pork cube for added flavor (if using). Season with salt, pepper, and fish sauce to taste. Reduce the heat and let the pork simmer for 45 minutes to 1 hour, or until the pork is tender.</li>
+                            <li><strong>Add the Vegetables:</strong> Once the pork is tender, add the potatoes, corn, and tomatoes to the pot. Let it cook for about 10-15 minutes until the potatoes and corn are tender.</li>
+                            <li><strong>Add Pechay and Other Vegetables:</strong> Add the green beans, pechay, and banana heart (if using) into the soup. Let it cook for an additional 5-7 minutes, until the vegetables are tender and all the flavors meld together.</li>
+                            <li><strong>Taste and Adjust Seasoning:</strong> Taste the broth and adjust the seasoning with more salt, pepper, or fish sauce if necessary.</li>
+                            <li><strong>Serve:</strong> Ladle the Nilagang Baboy into bowls and serve with steamed rice. Enjoy this comforting dish with your family and friends!</li>
+                            <li><strong>Enjoy!</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="FOOT" id="FOOTER">
+        <link rel="stylesheet" href="/ITWELL update 3/ITWELLlibraryupdate1/FOOTER/footer.css">
+        <div class="Team">
+            <a href="/about-us/about_us.html"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitelogo.png" alt=""></a>
+            <div>
+                <h1>LEARN MORE ABOUT US!</h1>
+                <h6>Meet The Team</h6>
+                <h6>IT-well</h6>
+            </div>
+        </div>
+        <div class="socials">
+            <h1>SOCIALS!</h1>
+            <div class="social-icons">
+            <a href="https://www.instagram.com/it.well.library/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whiteig.png" alt=""></a>
+            <a href="https://www.facebook.com/share/19yahNdhqe/"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/white/whitefb.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCg-EVUMzkL_SoBhqvPicMEQ"><img src="/ITWELL update 3/ITWELLlibraryupdate1\images\footer\white\whiteyt.png" alt=""></a>
+        </div>
+        </div>
+        <div class="back-To-Top">
+            <h3>BACK TO TOP</h3>
+        <a href="#start"><img src="/ITWELL update 3/ITWELLlibraryupdate1/images/footer/back to top button.png" alt=""></a>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: The information provided on this website is for general informational purposes only. We make no guarantees about the accuracy or completeness of the content.</p>
+        </div>
+    </div>
+</footer>
+<style>
+    #copy-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+    }
+</style>
+
+<div id="copy-notification">Link copied to clipboard!</div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.add('hidden');
+        });
+
+        document.getElementById(sectionId).classList.remove('hidden');
+
+        document.querySelectorAll('.toggle-buttons button').forEach(button => {
+            button.classList.remove('active');
+        });
+        document.querySelector(`.toggle-buttons button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+
+    function generateShareLink() {
+        const currentUrl = window.location.href;
+        const randomLink = currentUrl + '?share=' + Math.random().toString(36).substring(7);
+
+        navigator.clipboard.writeText(randomLink).then(() => {
+            showCopyNotification();
+        }).catch(err => {
+            console.error("Failed to copy link: ", err);
+        });
+    }
+
+    function showCopyNotification() {
+        const notification = document.getElementById("copy-notification");
+        notification.style.opacity = "1";
+
+        setTimeout(() => {
+            notification.style.opacity = "0";
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #fefe87, #fefe87, white);
+
+}
+.topbar {
+    width: 100%;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+
+}
+
+.topbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5vw;
+  
+}
+.topbar .search-Bar img{
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+    width: 1vw;
+
+}
+.topbar .search-Bar button{
+    border: #382ce7 solid 1px;
+   
+    background-color: #382ce7;
+    height: 2vw;
+    border-radius: 0 30px 30px 0;
+cursor: pointer;            
+justify-content: center;
+    align-items: center;
+    width: 2vw;
+    padding: 0.5vw;
+}
+.search-Bar button:hover{
+    background-color: #311fb7;
+}
+.topbar .search-Bar{
+display: flex;
+align-items: center;
+}
+.topbar ul li {
+    position: relative;
+    align-items: center;
+    display: flex;
+  
+}
+.topbar .search{
+    width: 15vw;
+  border-radius: 30px 0 0 30px ;
+    border: #382ce7 solid 1.5px;
+    height:2vw;
+
+    position: relative;
+}
+.search{
+    padding-left: 20px;
+    
+}
+
+
+
+.topbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #463aff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.topbar ul li:hover::after {
+    width: 100%;
+}
+.topbar ul li.current::after {
+    width: 100%;  
+}
+
+
+.topbar a {
+    color: #463aff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.5vh;
+}
+
+.top {
+    width: 100%;
+background-color: white;
+position: sticky;
+height: 8vh;
+display: flex;
+align-items: center;
+border-bottom: 2px solid #463aff;
+padding: 0 2%;
+/* overflow: hidden; */
+justify-content: space-between;
+}
+
+
+.top img {
+    width: 5rem;
+    margin-top: -1vh;
+    overflow: hidden;
+   
+}
+.top-content .browse-More img{
+    width: 2vw;
+    height: auto;
+ 
+}
+.top-content .browse-More {
+    
+    align-items: center;  
+    display: flex;
+    justify-content: center;
+    gap: 10px;  
+    margin: 0;  
+}
+
+/* Navigation buttons */
+.button {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: auto;
+    min-width: fit-content;
+}
+
+.button-text {
+    border: 0;
+    max-width: none;
+    width: auto;
+    margin: 5% 5%;
+    position: relative;
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+    font-weight: bolder;
+    white-space: nowrap;
+    align-items: center;
+}
+.button-text .current1{
+color: #808080;
+}
+.button-text img{
+/* height: auto; */
+height: 3vh;
+width: 2vw;
+}
+
+.button-text a{
+text-decoration: none;
+list-style: none;
+border: 0;
+margin: 0 10px;
+color: #311fb7;
+}
+/* Content layout */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  
+}
+.left-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
+}
+.left-section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+}
+.right-section {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.food-info {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+   
+    border: 3px solid #ccc;
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.food-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #463aff;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3px solid #463aff;
+    padding-bottom: 15px;
+}
+.descriptor, .ingredients, .steps, .allergies {
+    margin-top: 25px;
+}
+.descriptor dl, .ingredients p, .steps p, .allergies p {
+    font-weight: bold;
+    font-size: 24px;
+    color: #463aff;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+.descriptor dt, .allergies dt {
+    font-weight: bold;
+    font-size: 22px;
+    color: #463aff;
+    margin-top: 10px;
+}
+.descriptor dd, .allergies dd {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #000000;
+    font-weight: normal;
+}
+.ingredients ul{
+    list-style-type: disc;
+    padding-left: 30px;
+    color: #000000;
+    font-size: 22px;
+}
+.steps ol {
+    list-style-type: decimal;
+    padding-left: 30px;
+    color: #000000;
+    font-size: 22px;
+}
+.ingredients ul li, .steps ol li {
+    margin-bottom: 10px;
+}
+
+/* buttons */
+.toggle-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.toggle-buttons button {
+    background-color: #463aff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 5vw;
+
+    /* font-size: 16px; */
+    transition: background-color 0.3s ease;
+    flex: 1 1 auto;
+}
+.toggle-buttons button:hover {
+    background-color: #3729cc;
+}
+.toggle-buttons button.active {
+    background-color: #3629cc;
+}
+
+/* Para raw sa Text Transition */
+.content-section {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.content-section.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Navigation bar ngani */
+.topbar {
+    width: 100%;
+}
+
+.topbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5vw;
+  
+}
+.topbar .search-Bar img{
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+    width: 1vw;
+
+}
+.topbar .search-Bar button{
+    border: #382ce7 solid 1px;
+   
+    background-color: #382ce7;
+    height: 2vw;
+    border-radius: 0 30px 30px 0;
+cursor: pointer;            
+justify-content: center;
+    align-items: center;
+    width: 2vw;
+    padding: 0.5vw;
+}
+.search-Bar button:hover{
+    background-color: #311fb7;
+}
+.topbar .search-Bar{
+display: flex;
+align-items: center;
+}
+.topbar ul li {
+    position: relative;
+    align-items: center;
+    display: flex;
+  
+}
+.topbar .search{
+    width: 15vw;
+  border-radius: 30px 0 0 30px ;
+    border: #382ce7 solid 1.5px;
+    height:2vw;
+
+    position: relative;
+}
+.search{
+    padding-left: 20px;
+    
+}
+
+
+
+.topbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #463aff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.topbar ul li:hover::after {
+    width: 100%;
+}
+.topbar ul li.current::after {
+    width: 100%;  
+}
+
+
+.topbar a {
+    color: #463aff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.5vh;
+}
+
+.top {
+    width: 100%;
+background-color: white;
+position: sticky;
+height: 8vh;
+display: flex;
+align-items: center;
+border-bottom: 2px solid #463aff;
+padding: 0 2%;
+/* overflow: hidden; */
+justify-content: space-between;
+}
+
+
+.top img {
+    width: 5rem;
+    margin-top: -1vh;
+    overflow: hidden;
+   
+}
+.top-content .browse-More img{
+    width: 2vw;
+    height: auto;
+ 
+}
+.top-content .browse-More {
+    
+    align-items: center;  
+    display: flex;
+    justify-content: center;
+    gap: 10px;  
+    margin: 0;  
+}
+/* PANG MOBILKE TO PARA RESPONSIVE */
+.hamburger {
+display: none; 
+flex-direction: column;
+cursor: pointer;
+gap: 4px;
+transition: all 1s ease-in-out;
+}
+
+.hamburger span {
+display: block;
+height: 3px;
+width: 25px;
+background: #463aff;
+border-radius: 3px;
+
+}
+.mobile-menu {
+display: none;
+background: white;
+position: absolute;
+
+right: 0px;
+width: 100%;
+border-radius: 0 0 30px 30px ;
+text-align: center;
+z-index: 1000;
+border: 0;
+border: #311fb7 solid 2px;
+
+
+}
+.mobile-menu .current{
+text-decoration: underline 2px ;
+text-underline-offset:8px ;
+
+
+}
+
+.mobile-menu ul {
+list-style: none;
+padding: 0;
+
+margin: 0;
+}
+.mobile-menu ul li {
+padding: 10px 0;
+
+}
+.mobile-menu ul li a {
+color: #463aff;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 2vh;
+}
+
+/* navbar end */
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    /* wider screens (laptops, desktops) */
+    .content {
+        flex-direction: row; 
+        align-items: flex-start; 
+        gap: 20px; 
+    }
+    .left-section {
+        width: 50%; 
+        margin-top: 50px; 
+    }
+    .right-section {
+        width: 50%; 
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        display: none;
+        transition: 1s ease-in-out;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 20px;
+        transition: 1s ease-in-out;
+    
+    
+    }
+    /* For tablets and smaller screens */
+    .top {
+        height: 10vh;
+    }
+    
+    
+    .button-text img{
+        height: auto;
+        width: 2vw;
+    }
+
+.button-text {
+  
+ align-items: center;
+   
+    justify-content: center;
+    width: 100%;
+ 
+    left: 0px !important; 
+    top: 2px !important; 
+    bottom: -10px !important;
+   position: relative;
+   white-space: normal;
+   border: 0;
+   display: flex;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.button{
+    width: 100%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1% auto;
+    left: 0;
+}
+
+    .top img {
+     
+        padding: 15px !important;
+    }
+    .topbar a {
+        font-size: 2vh;
+    }
+ 
+    .food-name {
+        font-size: 28px;
+    }
+    .descriptor dl, .ingredients p, .steps p, .allergies p {
+        font-size: 20px;
+    }
+    .descriptor dt, .allergies dt {
+        font-size: 18px;
+    }
+    .descriptor dd, .allergies dd {
+        font-size: 16px;
+    }
+    .ingredients ul, .steps ol {
+        font-size: 18px;
+    }
+    .toggle-buttons button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .left-section {
+        margin-top: 30px; /* Smaller margin for tablets */
+    }
+    .search-Bar img{
+        height: auto;
+        justify-content: center;
+        align-items: center;
+
+        width: 3vw;
+    
+    }
+   .search-Bar button{
+        border: #382ce7 solid 1px;
+       
+        background-color: #382ce7;
+        height: 7vw;
+        border-radius: 0 30px 30px 0;
+cursor: pointer;            
+
+        width: 8vw;
+        padding: 1.5vw;
+    }
+    .category-content{
+        font-size: 1rem;
+    }
+    .search-Bar button:hover{
+        background-color: #311fb7;
+    }
+.search-Bar{
+    display: flex;
+    align-items: center;
+    margin: 2% auto;
+    justify-content: center;
+}
+    .topbar ul li {
+        position: relative;
+        align-items: center;
+        display: flex;
+      
+    }
+  
+  .search{
+        width: 70vw;
+      border-radius: 30px 0 0 30px ;
+        border: #382ce7 solid 1.5px;
+        height:7vw;
+
+        position: relative;
+    }
+    .search{
+        padding-left: 20px;
+        
+    }
+    
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices */
+    .top {
+        height: 8vh;
+    }
+   
+    .topbar a {
+        font-size: 1.5vh;
+    }
+    .button {
+        /* top: 10%; */
+        font-size: 4vw;
+    }
+  
+  
+    .food-name {
+        font-size: 24px;
+    }
+    .descriptor dl, .ingredients p, .steps p, .allergies p {
+        font-size: 18px;
+    }
+    .descriptor dt, .allergies dt {
+        font-size: 16px;
+    }
+    .descriptor dd, .allergies dd {
+        font-size: 14px;
+    }
+    .ingredients ul, .steps ol {
+        font-size: 16px;
+    }
+    .toggle-buttons button {
+        font-size: 3vw;
+        padding: 6px 12px;
+        text-align: center;
+        left: 0;
+    }
+    .left-section {
+        margin-top: 20px; /* smaller margin for mobile */
+    }
+
+    /* Stack image and content vertically on mobile */
+    .content {
+        flex-direction: column;
+    }
+    .left-section {
+        order: 1; /* ung Image  */
+    }
+    .right-section {
+        order: 2; /* Content below */
+    }
+    
+.top{
+height: 5vh;
+}
+
+
+
+}
+
+.share-button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #463aff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: auto;
+    z-index: 1;
+}
+.share-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+    border-radius: 50%;
+}
+
+.food-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.share-button {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: white;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.share-button .share-icon {
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.share-button:hover {
+    background-color: white; 
+}
+
+.share-button:hover .share-icon {
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+}
+#copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+/* Search Suggestion Styles */
+.suggestion-box {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.search-Bar {
+    position: relative;
+}
